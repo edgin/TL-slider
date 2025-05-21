@@ -21,7 +21,7 @@ export function initCursor() {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     });
 
-    const slider = document.querySelector('.slider');
+    const slider = document.querySelector('.tl-slider__slider');
     const buttons = document.querySelectorAll('.slide-prev, .slide-next');
 
     if (slider) {
