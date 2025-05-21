@@ -25,7 +25,11 @@ export function initCursor() {
     const buttons = document.querySelectorAll('.slide-prev, .slide-next');
 
     if (slider) {
-        slider.addEventListener('mouseenter', () => cursor.style.display = 'block');
+        slider.addEventListener('mouseenter', (e) => {
+            cursor.style.display = 'block';
+            cursor.style.top = `${e.clientY}px`;
+            cursor.style.left = `${e.clientX}px`;
+          });
         slider.addEventListener('mouseleave', () => cursor.style.display = 'none');
     }
 

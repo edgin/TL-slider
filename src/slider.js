@@ -27,7 +27,7 @@ export function renderSlidesAndDots(slider, dotsContainer) {
         </div>
       </div>`;
         slider.appendChild(slide);
-
+        if (!data.isIntro) {
         const point = document.createElement('div');
         point.classList.add('tl-slider__point');
 
@@ -42,5 +42,6 @@ export function renderSlidesAndDots(slider, dotsContainer) {
         point.appendChild(label);
         point.appendChild(dot);
         dotsContainer.appendChild(point);
+        }
     });
 }

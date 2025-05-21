@@ -20,7 +20,35 @@ function setSliderPosition(x) {
 
 function goToSlide(index) {
     const lastIndex = slideCount - 1;
-    if (index > lastIndex) index = 0;
+    // if (index > lastIndex) index = 0;
+
+    if (index > lastIndex) {
+        currentIndex = 0;
+        currentTranslate = 0;
+        prevTranslate = 0;
+    
+        const progressBar = document.querySelector('.tl-slider__line-progress');
+        if (progressBar) {
+            progressBar.style.width = '0px'; // reset progress
+        }
+    
+        // Reset slider visually
+        requestAnimationFrame(() => {
+            setSliderPosition(0);
+            updateYearHighlight();
+            updateArrows();
+            animateSlide(slides[0]);
+    
+            // ✅ Manually scroll timeline to beginning
+            const scrollContainer = document.querySelector('.tl-slider__timeline-scroll');
+            if (scrollContainer) {
+                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        });
+    
+        return;
+    }
+    
 
     currentIndex = Math.max(index, 0);
     currentTranslate = -currentIndex * slideWidth;
@@ -48,7 +76,9 @@ function updateArrows() {
 function scrollDotIntoView(index) {
     const scrollContainer = document.querySelector('.tl-slider__timeline-scroll');
     const points = document.querySelectorAll('.tl-slider__point');
-    const activeDot = points[index];
+
+    if(index===0)return;
+    const activeDot = points[index-1];
 
     if (!scrollContainer || !activeDot) return;
 
@@ -99,7 +129,8 @@ function updateYearHighlight() {
         return rect.left + rect.width / 2 - containerRect.left;
     });
 
-    const currentDot = points[currentIndex].querySelector('.tl-slider__year-dot');
+    if(currentIndex === 0) return;
+    const currentDot = points[currentIndex-1].querySelector('.tl-slider__year-dot');
     const currentRect = currentDot.getBoundingClientRect();
     const currentPos = currentRect.left + currentRect.width / 2 - containerRect.left;
     const progressWidth = currentPos - lineStart;
@@ -111,7 +142,7 @@ function updateYearHighlight() {
         targets: progressBar,
         left: `${lineStart}px`,
         width: progressWidth,
-        duration: 600,
+        duration: 400,
         easing: 'easeOutQuad',
         update: () => {
             const currentWidth = parseFloat(progressBar.style.width);
@@ -184,6 +215,7 @@ function addEventListeners(prevBtn, nextBtn) {
             currentIndex = index;
             updateYearHighlight();
             updateArrows();
+            scrollDotIntoView(currentIndex);
         }
     });
 
