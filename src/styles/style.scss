@@ -209,7 +209,7 @@ section {
   }
 }
 
-.slide-prev {
+.tl-slider__slide-prev {
   position: absolute;
   top: 75%;
   transform: translateY(-50%);
@@ -229,7 +229,7 @@ section {
   cursor: pointer;
 }
 
-.slide-next {
+.tl-slider__slide-next {
   position: absolute;
   top: 75%;
   transform: translateY(-50%);
@@ -374,7 +374,7 @@ section {
   border: 1px solid var(--dot-active-color);
 }
 
-.tl-slider__wrapper {
+.tl-slider__timeline-wrapper {
   position: relative;
   overflow: hidden;
   position: relative;
@@ -537,15 +537,15 @@ section {
     }
   }
 
-  .slide-prev {
+  .tl-slider__slide-prev {
     top: 93%;
   }
 
-  .slide-next {
+  .tl-slider__slide-next {
     top: 93%;
   }
 
-  .tl-slider__wrapper {
+  .tl-slider__timeline-wrapper {
     &::before {
       content: "";
       position: absolute;

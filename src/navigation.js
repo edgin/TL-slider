@@ -34,8 +34,8 @@ function goToSlide(index) {
 }
 
 function updateArrows() {
-    const prevBtn = document.querySelector('.slide-prev');
-    const nextBtn = document.querySelector('.slide-next');
+    const prevBtn = document.querySelector('.tl-slider__slide-prev');
+    const nextBtn = document.querySelector('.tl-slider__slide-next');
     const lastIndex = slideCount - 1;
 
     prevBtn.disabled = currentIndex === 0;
@@ -229,8 +229,8 @@ export function initNavigation(sliderEl, dotsEl) {
     slideWidth = slides[0].offsetWidth;
     slideCount = slides.length;
 
-    const prevBtn = document.querySelector('.slide-prev');
-    const nextBtn = document.querySelector('.slide-next');
+    const prevBtn = document.querySelector('.tl-slider__slide-prev');
+    const nextBtn = document.querySelector('.tl-slider__slide-next');
 
     addEventListeners(prevBtn, nextBtn);
     goToSlide(0);

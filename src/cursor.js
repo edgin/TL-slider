@@ -22,7 +22,7 @@ export function initCursor() {
     });
 
     const slider = document.querySelector('.tl-slider__slider');
-    const buttons = document.querySelectorAll('.slide-prev, .slide-next');
+    const buttons = document.querySelectorAll('.tl-slider__slide-prev, .tl-slider__slide-next');
 
     if (slider) {
         slider.addEventListener('mouseenter', () => cursor.style.display = 'block');
