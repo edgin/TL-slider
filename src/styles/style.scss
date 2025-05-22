@@ -385,7 +385,7 @@ section {
   border: 1px solid var(--dot-active-color);
 }
 
-.tl-slider__timeline-wrapper {
+.tl-slider__wrapper {
   position: relative;
   overflow: hidden;
   position: relative;
@@ -527,6 +527,7 @@ section {
   .slide-content .text p {
     padding-left: 0;
   }
+
   .tl-slide__banner-image {
     width: 260px;
     height: 260px;
@@ -575,7 +576,7 @@ section {
     top: 93%;
   }
 
-  .tl-slider__timeline-wrapper {
+  .tl-slider__wrapper {
     &::before {
       content: "";
       position: absolute;
