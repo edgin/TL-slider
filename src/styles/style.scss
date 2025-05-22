@@ -120,7 +120,7 @@ section {
 
 .tl-slider__slider {
   display: flex;
-  height: 500px;
+  height: 600px;
   transition: transform 0.3s ease;
   cursor: grab;
   cursor: none;
@@ -169,7 +169,7 @@ section {
       text-align: left;
       line-height: 110%;
       color: var(--heading-color);
-      font-size: 60px;
+      font-size: 80px;
       max-width: 430px;
     }
 
@@ -389,6 +389,7 @@ section {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  height: 130px;
   max-width: 1000px;
 
   &::before {
@@ -568,7 +569,7 @@ section {
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 80px;
+      width: 70px;
       pointer-events: none;
       z-index: 5;
       background: linear-gradient(to right, var(--background-color) 0%, var(--background-color) 80%, transparent 100%);
@@ -579,7 +580,7 @@ section {
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 80px;
+      width: 70px;
       pointer-events: none;
       z-index: 5;
       background: linear-gradient(to right, var(--background-color) 0%, var(--background-color) 80%, transparent 100%);
