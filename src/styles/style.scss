@@ -44,7 +44,7 @@ $font-family_bold: 'neue_haas_grotesk_display75Bd', sans-serif;
   --white: #fff;
   --line-thickness: 2px;
   --body-bg: #f4f4f4;
-  --line-base-bg: rgba(0, 0, 0, 0.4);
+  --line-base-bg: rgba(0, 0, 0, 1);
   --body-font-color: #333;
 }
 
@@ -163,6 +163,8 @@ section {
     margin: 10px;
     text-align: left;
     flex: 1;
+    padding-left: 100px;
+
 
     h1 {
       font-family: $font-family_regular;
@@ -315,7 +317,7 @@ section {
   width: 0;
   position: absolute;
   top: 63%;
-  height: 2px;
+  height: 1px;
   transform: translateY(-50%);
   z-index: 1;
   width: 100%;
@@ -383,7 +385,7 @@ section {
   border: 1px solid var(--dot-active-color);
 }
 
-.tl-slider__wrapper {
+.tl-slider__timeline-wrapper {
   position: relative;
   overflow: hidden;
   position: relative;
@@ -521,6 +523,16 @@ section {
   z-index: 1;
 }
 
+@media (max-width:920px) {
+  .slide-content .text p {
+    padding-left: 0;
+  }
+  .tl-slide__banner-image {
+    width: 260px;
+    height: 260px;
+  }
+}
+
 @media (max-width: 768px) {
   .tl-slider__slider {
     height: auto;
@@ -536,6 +548,7 @@ section {
 
     .text {
       width: 100%;
+      padding: 20px;
 
       h1 {
         font-size: 40px;
@@ -562,7 +575,7 @@ section {
     top: 93%;
   }
 
-  .tl-slider__wrapper {
+  .tl-slider__timeline-wrapper {
     &::before {
       content: "";
       position: absolute;
