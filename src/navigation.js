@@ -111,7 +111,10 @@ function updateYearHighlight() {
     const lineStart = firstRect.left + firstRect.width / 2 - containerRect.left;
     const lineEnd = lastRect.left + lastRect.width / 2 - containerRect.left;
     const fullLineWidth = lineEnd - lineStart;
-
+    const introLine = document.querySelector('.tl-slider__line-intro');
+    if (introLine) {
+      introLine.style.left = `${lineStart - 100}px`;
+    }
     baseBar.style.left = `${lineStart}px`;
     baseBar.style.width = `${fullLineWidth}px`;
 

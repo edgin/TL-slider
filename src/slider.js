@@ -12,6 +12,11 @@ export function renderSlidesAndDots(slider, dotsContainer) {
     progressLine.classList.add('tl-slider__line-progress');
     dotsContainer.appendChild(progressLine);
 
+    const introLine = document.createElement('div');
+introLine.classList.add('tl-slider__line-intro');
+dotsContainer.appendChild(introLine);
+
+
     slideData.forEach((data, i) => {
         const slide = document.createElement('div');
         slide.classList.add('slide');
