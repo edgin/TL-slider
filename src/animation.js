@@ -1,4 +1,3 @@
-
 import anime from 'animejs';
 
 export function animateSlide(slideEl) {
