@@ -12,6 +12,11 @@ export function renderSlidesAndDots(slider, dotsContainer) {
     progressLine.classList.add('tl-slider__line-progress');
     dotsContainer.appendChild(progressLine);
 
+    const introLine = document.createElement('div');
+introLine.classList.add('tl-slider__line-intro');
+dotsContainer.appendChild(introLine);
+
+
     slideData.forEach((data, i) => {
         const slide = document.createElement('div');
         slide.classList.add('slide');
@@ -27,7 +32,7 @@ export function renderSlidesAndDots(slider, dotsContainer) {
         </div>
       </div>`;
         slider.appendChild(slide);
-
+        if (!data.isIntro) {
         const point = document.createElement('div');
         point.classList.add('tl-slider__point');
 
@@ -42,5 +47,6 @@ export function renderSlidesAndDots(slider, dotsContainer) {
         point.appendChild(label);
         point.appendChild(dot);
         dotsContainer.appendChild(point);
+        }
     });
 }

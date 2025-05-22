@@ -280,6 +280,17 @@ section {
   padding: 0 30px;
 }
 
+.tl-slider__line-intro {
+  position: absolute;
+  top: 63%;
+  height: 2px;
+  width: 100px;
+  background-color: var(--dot-highlighted-color);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
 .tl-slider__point {
   position: relative;
   z-index: 3;
@@ -361,7 +372,7 @@ section {
   background: var(--dot-default-color);
   border-radius: 50%;
   flex-shrink: 0;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.7s ease, transform 0.7s ease;
 }
 
 .tl-slider__year-dot--highlighted {
@@ -423,6 +434,15 @@ section {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.custom-cursor {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
 }
 
 .custom-cursor {
