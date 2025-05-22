@@ -21,8 +21,8 @@ export function initCursor() {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     });
 
-    const slider = document.querySelector('.slider');
-    const buttons = document.querySelectorAll('.slide-prev, .slide-next');
+    const slider = document.querySelector('.tl-slider__slider');
+    const buttons = document.querySelectorAll('.tl-slider__slide-prev, .tl-slider__slide-next');
 
     if (slider) {
         slider.addEventListener('mouseenter', (e) => {

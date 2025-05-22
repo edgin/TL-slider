@@ -1,6 +1,6 @@
 export function initThemeToggle() {
     const themeToggle = document.querySelector('.theme-toggle');
-    const sliderContainer = document.querySelector('.slider-wrapper');
+    const sliderContainer = document.querySelector('.tl-slider__slider-wrapper');
 
     themeToggle.addEventListener('click', () => {
         const isYellowTheme = sliderContainer.classList.contains('theme-yellow');
