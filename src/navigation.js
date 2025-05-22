@@ -238,11 +238,18 @@ function addEventListeners(prevBtn, nextBtn) {
         if (!isDragging) return;
         const x = e.touches[0].pageX;
         const dx = x - startX;
+    
         currentTranslate = clamp(prevTranslate + dx, -((slideCount - 1) * slideWidth), 0);
-        updateYearHighlight();
-        updateArrows();
+        setSliderPosition(currentTranslate); // ← ❗️This is the missing piece
+    
+        const index = Math.round(Math.abs(currentTranslate) / slideWidth);
+        if (index !== currentIndex) {
+            currentIndex = index;
+            updateYearHighlight();
+            updateArrows();
+            scrollDotIntoView(currentIndex);
+        }
     });
-
     document.addEventListener('keydown', e => {
         if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
         if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
