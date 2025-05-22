@@ -20,7 +20,6 @@ function setSliderPosition(x) {
 
 function goToSlide(index) {
     const lastIndex = slideCount - 1;
-    // if (index > lastIndex) index = 0;
 
     if (index > lastIndex) {
         currentIndex = 0;
@@ -29,17 +28,15 @@ function goToSlide(index) {
 
         const progressBar = document.querySelector('.tl-slider__line-progress');
         if (progressBar) {
-            progressBar.style.width = '0px'; // reset progress
+            progressBar.style.width = '0px';
         }
 
-        // Reset slider visually
         requestAnimationFrame(() => {
             setSliderPosition(0);
             updateYearHighlight();
             updateArrows();
             animateSlide(slides[0]);
 
-            // ✅ Manually scroll timeline to beginning
             const scrollContainer = document.querySelector('.tl-slider__timeline-scroll');
             if (scrollContainer) {
                 scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
@@ -240,7 +237,7 @@ function addEventListeners(prevBtn, nextBtn) {
         const dx = x - startX;
 
         currentTranslate = clamp(prevTranslate + dx, -((slideCount - 1) * slideWidth), 0);
-        setSliderPosition(currentTranslate); // ← ❗️This is the missing piece
+        setSliderPosition(currentTranslate);
 
         const index = Math.round(Math.abs(currentTranslate) / slideWidth);
         if (index !== currentIndex) {

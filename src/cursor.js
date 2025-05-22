@@ -29,7 +29,7 @@ export function initCursor() {
             cursor.style.display = 'block';
             cursor.style.top = `${e.clientY}px`;
             cursor.style.left = `${e.clientX}px`;
-          });
+        });
         slider.addEventListener('mouseleave', () => cursor.style.display = 'none');
     }
 
