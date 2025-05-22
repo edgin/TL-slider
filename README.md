@@ -150,7 +150,10 @@ Developed by Luka using Vanilla JavaScript and Anime.js as part of a UI componen
 |   `styles.css`  |   Layout, theme, and animations  |
 |    `main.js`    | Entry point, initializes modules |
 | `navigation.js` |      Slide navigation logic      |
-|    `drag.js`    |    Drag-to-scroll interaction    |
+|    `cursor.js`  |          Cursor styling          |
 |    `theme.js`   |       Theme switching logic      |
-|    `dots.js`    |     Dot rendering and updates    |
-|  `animation.js` |     Line and slide animations    |
+|   `slider.js`   |          Slides rendering        |
+|  `animation.js` |          Slide animations        |
+|     `data.js`   |              Slide data          |
+
+
