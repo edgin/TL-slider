@@ -7,8 +7,8 @@ export function initThemeToggle() {
         const yellowTheme = isYellowTheme ? 'theme-white' : 'theme-yellow';
         const whiteTheme = isYellowTheme ? 'theme-yellow' : 'theme-white';
         const newImageSrc = isYellowTheme
-            ? '/assets/img/tl-slide_white-banner.png'
-            : '/assets/img/tl-slide__yellow-banner.png';
+            ? 'assets/img/tl-slide_white-banner.png'
+            : 'assets/img/tl-slide__yellow-banner.png';
 
         sliderContainer.classList.replace(whiteTheme, yellowTheme);
         document.querySelector('.custom-cursor')?.classList.replace(whiteTheme, yellowTheme);
