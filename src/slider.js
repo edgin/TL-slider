@@ -28,7 +28,7 @@ export function renderSlidesAndDots(slider, dotsContainer) {
  <p>${data.text}</p>
  </div>
  <div class="img">
- <img class="tl-slide__banner-image" draggable="false" src="/assets/img/tl-slide__yellow-banner.png" alt="${data.tag}">
+ <img class="tl-slide__banner-image" draggable="false" src="assets/img/tl-slide__yellow-banner.png" alt="${data.tag}">
  </div>
  </div>`;
     slider.appendChild(slide);
